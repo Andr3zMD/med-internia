@@ -3,40 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 0: Onboarding y Entorno de Trabajo | Med InternIA</title>
+    <title>Módulo 0: Puerta de Enlace al Machine Learning Médico | Med InternIA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --bg: #f8fafc; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #1e293b; background: var(--bg); margin: 0; }
-        nav { background: var(--primary); padding: 1rem 0; color: white; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .content-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: var(--dark); font-size: 2.5rem; border-bottom: 4px solid var(--primary); padding-bottom: 1rem; }
+        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --warning: #f9ab00; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: #1e293b; background: var(--bg); margin: 0; }
+        nav { background: linear-gradient(135deg, var(--primary), var(--dark)); padding: 1.2rem 0; color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .content-card { background: white; padding: 4rem; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
+        h1 { color: var(--dark); font-size: 2.8rem; line-height: 1.2; margin-bottom: 1.5rem; border-bottom: 4px solid var(--accent); display: inline-block; }
+        h2 { color: var(--primary); margin-top: 3rem; font-size: 1.8rem; display: flex; align-items: center; gap: 10px; }
+        .intro-text { font-size: 1.15rem; color: #475569; margin-bottom: 3rem; }
         
-        /* Contenedor de Video de Alta Estabilidad */
-        .video-wrapper { 
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-            margin: 2.5rem 0; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            background: #000; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-        }
-        .video-wrapper iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: none; 
-        }
+        /* Cajas de Beneficios */
+        .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .benefit-item { background: #f1f5f9; padding: 1.5rem; border-radius: 15px; border-left: 5px solid var(--primary); }
+        .benefit-item strong { color: var(--dark); display: block; margin-bottom: 0.5rem; }
+
+        /* Botón de Acción */
+        .cta-container { text-align: center; background: #eef2ff; padding: 3rem; border-radius: 20px; border: 2px solid var(--primary); margin: 3rem 0; }
+        .btn-colab { background: var(--warning); color: white; padding: 1.2rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; box-shadow: 0 5px 20px rgba(249, 171, 0, 0.4); }
+        .btn-colab:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(249, 171, 0, 0.5); }
+
+        /* Tutorial Steps */
+        .step-card { border: 1px solid #e2e8f0; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; background: #fff; transition: 0.3s; }
+        .step-card:hover { border-color: var(--primary); background: #fcfdfe; }
+        .step-number { background: var(--primary); color: white; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin-bottom: 1rem; }
         
-        .instruction-step { background: #f1f5f9; border-left: 5px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 10px 10px 0; }
-        .shortcut { background: var(--dark); color: white; padding: 0.3rem 0.8rem; border-radius: 5px; font-family: 'Courier New', monospace; font-weight: bold; }
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
-        .btn { padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
+        .shortcut { background: #334155; color: white; padding: 3px 10px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9em; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #f1f5f9; }
+        .btn { padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         .btn-next { background: var(--primary); color: white; }
         .btn-back { background: #e2e8f0; color: #475569; }
     </style>
@@ -44,51 +40,91 @@
 <body>
     <nav>
         <div class="container" style="padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem;">🏥 Med InternIA</a>
-            <a href="index.html" style="color: white; text-decoration: none;">Inicio</a>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.3rem;"><i class="fas fa-stethoscope"></i> Med InternIA</a>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: 500;">Panel de Control</a>
         </div>
     </nav>
 
     <div class="container">
         <article class="content-card">
-            <h1>Módulo 0: Onboarding y Entorno de Trabajo</h1>
+            <h1>Onboarding: Su Quirófano Digital</h1>
+            <p class="intro-text">Para un médico interesado en Machine Learning (ML), Deep Learning (DL) y Procesamiento de Lenguaje Natural (PLN), la tecnología no debe ser una barrera, sino un aliado. Bienvenido a la configuración de su entorno de experimentación clínica.</p>
+
+            <h2><i class="fas fa-microchip"></i> ¿Qué es Google Colaboratory?</h2>
+            <p>Es el estándar actual para la ciencia de datos. Imagine un entorno en la nube que le otorga superpoderes computacionales sin necesidad de configuraciones técnicas tediosas. Colab es el espacio donde sus algoritmos cobrarán vida.</p>
             
-            <p>Bienvenido al quirófano digital de Med InternIA. Para procesar nuestros modelos utilizaremos <strong>Google Colaboratory</strong>, una herramienta que permite ejecutar código Python en la nube con la potencia de los servidores de Google.</p>
-
-            <div class="instruction-step">
-                <h3><i class="fas fa-play-circle"></i> Tutorial: ¿Cómo funciona Google Colab?</h3>
-                <p>Este video explica paso a paso la interfaz de los "cuadernos" (notebooks) y la gestión de celdas.</p>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <strong>Ausencia de Instalación Local</strong>
+                    Inicie la programación en Python de forma inmediata, sin gestionar bibliotecas complejas ni librerías de escritorio.
+                </div>
+                <div class="benefit-item">
+                    <strong>Arquitectura Intuitiva</strong>
+                    Entorno diseñado para ser accesible, minimizando la curva de aprendizaje para profesionales de la salud.
+                </div>
+                <div class="benefit-item">
+                    <strong>Integración con el Ecosistema Google</strong>
+                    Almacenamiento nativo en Google Drive y vinculación directa con sus repositorios en GitHub.
+                </div>
+                <div class="benefit-item">
+                    <strong>Potencia de Cómputo (GPU/TPU)</strong>
+                    Acceso gratuito a hardware de alto rendimiento, esencial para entrenar modelos de Deep Learning de gran escala.
+                </div>
             </div>
 
-            <div class="video-wrapper">
-                <iframe src="https://player.vimeo.com/video/441235123?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <div class="cta-container">
+                <h3>Acceda a su Primer Cuaderno de Práctica</h3>
+                <p>He diseñado una libreta específica para que se familiarice con la interfaz antes de iniciar los módulos teóricos.</p>
+                <a href="https://colab.research.google.com/drive/1ljEPC6ak9GhReyQahGxFAZSC0W6_reNX?usp=sharing" target="_blank" class="btn-colab">
+                    <i class="fab fa-google-drive"></i> Ejecutar Laboratorio Virtual
+                </a>
             </div>
 
-            <h2>Fase de Estudio: El flujo de ejecución</h2>
-            <p>Un cuaderno de Colab se compone de celdas de <strong>texto</strong> (instrucciones) y celdas de <strong>código</strong> (acción clínica). Para que el aprendizaje sea efectivo, usted debe ejecutar cada paso activamente.</p>
+            <h2><i class="fas fa-graduation-cap"></i> Guía Operativa Paso a Paso</h2>
 
-            <div class="instruction-step" style="border-left-color: var(--primary);">
-                <strong><i class="fas fa-keyboard"></i> Comando Vital:</strong> Para ejecutar el contenido de cualquier celda y avanzar de forma fluida, presione la combinación: <span class="shortcut">Shift + Enter</span>. 
-                <br><br>
-                <em>Esta acción valida sus datos y permite que los algoritmos de IA procesen la información clínica en tiempo real.</em>
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Autenticación y Sesión</h3>
+                <p>Para interactuar con la inteligencia del sistema, debe <strong>iniciar sesión</strong> en su cuenta de Google. Busque el botón <strong>&lt;&lt;Acceder&gt;&gt;</strong> en la esquina superior derecha. Esto habilitará la persistencia de sus datos y avances.</p>
             </div>
 
-            <h2>Pasos iniciales en Colab:</h2>
-            <ol>
-                <li><strong>Log-in:</strong> Inicie sesión con su cuenta de Google para guardar progresos.</li>
-                <li><strong>Conexión:</strong> Pulse el botón "Conectar" en la esquina superior derecha para activar el motor de procesamiento.</li>
-                <li><strong>Práctica:</strong> Ejecute su primera celda usando <span class="shortcut">Shift + Enter</span>.</li>
-            </ol>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Anatomía del Notebook</h3>
+                <p>El cuaderno se divide en dos unidades funcionales fundamentales:</p>
+                <ul>
+                    <li><strong>Celdas de Texto:</strong> Donde reside la documentación clínica y el marco teórico escrito en Markdown.</li>
+                    <li><strong>Celdas de Código:</strong> Bloques dinámicos donde se ejecutan los scripts de Python.</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Ejecución y Flujo de Trabajo</h3>
+                <p>Para "disparar" un proceso o algoritmo, haga clic en el icono de reproducción o utilice el comando maestro:</p>
+                <div style="text-align: center; margin: 1.5rem 0;">
+                    <span class="shortcut">Ctrl + Enter</span> o <span class="shortcut">Shift + Enter</span>
+                </div>
+                <p><strong>Nota Crítica:</strong> La primera ejecución puede demorar unos segundos mientras Colab asigna un servidor remoto a su sesión. No interrumpa el proceso.</p>
+            </div>
+
+            <h2><i class="fas fa-vial"></i> Herramientas de Vanguardia</h2>
+            <p>A lo largo del curso, utilizaremos funciones de alto nivel:</p>
+            <ul>
+                <li><strong>Tablas Interactivas:</strong> Visualización dinámica de datos epidemiológicos con filtros inteligentes.</li>
+                <li><strong>Asistente Gemini:</strong> Integración de IA Generativa para sugerir arquitecturas de código y gráficas automatizadas.</li>
+                <li><strong>LaTeX en Medicina:</strong> Notación matemática profesional para fórmulas de riesgo y bioestadística.</li>
+            </ul>
 
             <div class="nav-buttons">
-                <a href="index.html" class="btn btn-back">← Volver al Inicio</a>
+                <a href="index.html" class="btn btn-back">← Volver al Panel</a>
                 <a href="modulo1.html" class="btn btn-next">Siguiente: Módulo 1 →</a>
             </div>
         </article>
     </div>
 
-    <footer style="text-align: center; padding: 2rem; color: #64748b;">
-        &copy; 2026 Dr. Andrés Zorrilla | Especialización en IA para Medicina Interna
+    <footer style="text-align: center; padding: 4rem; color: #64748b;">
+        <p>&copy; 2026 Dr. Andrés Zorrilla | <strong>Med InternIA</strong>: La Intersección entre Medicina e IA</p>
     </footer>
 </body>
 </html>
