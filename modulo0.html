@@ -3,57 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 0: Onboarding | Med InternIA</title>
+    <title>Módulo 0: Onboarding y Entorno de Trabajo | Med InternIA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #0066CC; --dark: #004999; --bg: #f8fafc; --white: #ffffff; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1e293b; background: var(--bg); margin: 0; }
+        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #1e293b; background: var(--bg); margin: 0; }
         nav { background: var(--primary); padding: 1rem 0; color: white; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .content-card { background: var(--white); padding: 3rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h1 { color: var(--dark); border-bottom: 3px solid var(--primary); padding-bottom: 0.5rem; }
-        .setup-box { background: #eef6ff; border-left: 5px solid var(--primary); padding: 1.5rem; margin: 2rem 0; }
-        .nav-buttons { display: flex; justify-content: space-between; margin-top: 3rem; }
-        .btn { padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .content-card { background: white; padding: 3.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { color: var(--dark); font-size: 2.5rem; border-bottom: 4px solid var(--primary); padding-bottom: 1rem; margin-bottom: 2rem; }
+        h2 { color: var(--primary); margin-top: 2.5rem; border-left: 5px solid var(--accent); padding-left: 1rem; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin: 2rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .shortcut-box { background: #f1f5f9; border: 2px dashed var(--primary); padding: 1.5rem; border-radius: 10px; margin: 2rem 0; display: flex; align-items: center; gap: 1rem; }
+        .key { background: white; border: 1px solid #cbd5e1; padding: 0.2rem 0.6rem; border-radius: 5px; box-shadow: 0 2px 0 #cbd5e1; font-weight: bold; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; }
+        .btn { padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         .btn-back { background: #e2e8f0; color: #475569; }
         .btn-next { background: var(--primary); color: white; }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
     <nav>
         <div class="container" style="padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">🏥 Med InternIA</a>
-            <a href="index.html" style="color: white; text-decoration: none;">Volver al Inicio</a>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem;">🏥 Med InternIA</a>
+            <a href="index.html" style="color: white; text-decoration: none;">← Volver al Inicio</a>
         </div>
     </nav>
 
     <div class="container">
         <article class="content-card">
-            <h1>Módulo 0: Onboarding y Entorno</h1>
-            <p>Bienvenido al inicio de su formación técnica. En este módulo configuraremos las herramientas que utilizaremos para procesar datos clínicos.</p>
+            <h1>Módulo 0: Configuración del Laboratorio Virtual</h1>
             
-            <div class="setup-box">
-                <h3><i class="fas fa-tools"></i> Herramienta Principal: Google Colab</h3>
-                <p>Utilizaremos Google Colab por su capacidad de ejecutar Python en la nube sin necesidad de instalaciones locales complejas.</p>
+            <p>Antes de procesar nuestra primera base de datos clínica, debemos preparar el quirófano digital. En Med InternIA utilizaremos <strong>Google Colaboratory</strong> (o Colab), una herramienta profesional de ciencia de datos adaptada para el aprendizaje médico.</p>
+
+            <h2>1. ¿Qué es Google Colab?</h2>
+            <p>Es un entorno de cuaderno interactivo basado en la nube. Imagine que es un documento de Word, pero que tiene la capacidad de <strong>ejecutar código de programación real</strong>. No requiere instalación en su computadora, utiliza los servidores de Google para procesar los datos y es gratuito para fines educativos.</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/nF_T6Wpsj68" title="Tutorial Google Colab Español" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
-            <h2>Pasos de Configuración:</h2>
+            <h2>2. ¿Cómo funciona la dinámica de estudio?</h2>
+            <p>Colab se divide en "Celdas". Existen celdas de <strong>texto</strong> (donde leerá la teoría médica) y celdas de <strong>código</strong> (donde aplicaremos los algoritmos). Para avanzar en el curso, usted no solo debe leer, sino "ejecutar" cada paso.</p>
+
+            <div class="shortcut-box">
+                <i class="fas fa-keyboard fa-2x" style="color: var(--primary);"></i>
+                <div>
+                    <strong>El comando más importante:</strong> Para ejecutar una celda y pasar automáticamente a la siguiente, presione simultáneamente <span class="key">Shift</span> + <span class="key">Enter</span>. Esta acción procesa la información y valida que el paso actual es correcto antes de seguir.
+                </div>
+            </div>
+
+            <h2>3. Pasos para su primera sesión</h2>
             <ol>
-                <li>Acceda a su cuenta de Google.</li>
-                <li>Abra un nuevo cuaderno (Notebook) en Colab.</li>
-                <li>Verifique la conexión instalando las librerías básicas (Pandas, NumPy).</li>
+                <li><strong>Acceso:</strong> Entre a <a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a> con su cuenta de Google.</li>
+                <li><strong>Nuevo Cuaderno:</strong> Haga clic en "Archivo" > "Nuevo cuaderno".</li>
+                <li><strong>Conexión:</strong> Pulse el botón "Conectar" en la esquina superior derecha para asignar memoria RAM de Google a su proyecto.</li>
+                <li><strong>Prueba:</strong> Escriba <code>print("Listo para Med InternIA")</code> y presione <span class="key">Shift</span> + <span class="key">Enter</span>.</li>
             </ol>
 
             <div class="nav-buttons">
-                <a href="index.html" class="btn btn-back">← Volver al Inicio</a>
-                <a href="modulo1.html" class="btn btn-next">Ir al Módulo 1 →</a>
+                <a href="index.html" class="btn btn-back">← Inicio</a>
+                <a href="modulo1.html" class="btn btn-next">Ir al Módulo 1: Fundamentos →</a>
             </div>
         </article>
     </div>
 
-    <footer style="text-align: center; padding: 2rem; color: #64748b;">
-        &copy; 2026 Dr. Andrés Zorrilla | Med InternIA
+    <footer style="text-align: center; padding: 3rem; color: #64748b;">
+        <p>&copy; 2026 Dr. Andrés Zorrilla | Proyecto de IA Aplicada a la Medicina Interna</p>
     </footer>
 </body>
 </html>
