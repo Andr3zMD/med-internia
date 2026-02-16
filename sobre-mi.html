@@ -6,7 +6,7 @@
     <title>Sobre Mí | Dr. Andrés Zorrilla</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ESTILOS GLOBALES (Coherentes con el resto del sitio) */
+        /* ESTILOS GLOBALES */
         :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --bg: #f8fafc; }
         body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: #1e293b; background: var(--bg); margin: 0; }
         
@@ -27,11 +27,11 @@
             margin-bottom: 3rem;
         }
 
-        /* FOTOGRAFÍA - Aquí está la clave */
+        /* FOTOGRAFÍA (Mantenemos la corrección .jpg.jpg) */
         .profile-img {
             width: 220px;
             height: 220px;
-            object-fit: cover; /* Asegura que la foto no se deforme */
+            object-fit: cover;
             border-radius: 50%;
             border: 6px solid var(--primary);
             padding: 5px;
@@ -47,6 +47,16 @@
         .bio-section { max-width: 800px; margin: 0 auto; text-align: left; }
         .bio-card { background: white; padding: 2.5rem; border-radius: 15px; margin-bottom: 2rem; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .bio-card h3 { color: var(--dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        
+        /* Citas destacadas */
+        .quote-box {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #475569;
+            border-left: 4px solid #cbd5e1;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
 
         /* REDES SOCIALES */
         .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 2rem; }
@@ -71,40 +81,39 @@
     <div class="container">
         
         <header class="profile-header">
-            <img src="perfil.jpg" alt="Dr. Andrés Zorrilla" class="profile-img">
+            <img src="perfil.jpg.jpg" alt="Dr. Andrés Zorrilla" class="profile-img">
             
             <h1>Dr. Andrés Zorrilla</h1>
-            <p class="subtitle">Medicina Interna & Inteligencia Artificial</p>
+            <p class="subtitle">Internista & Aprendiz Continuo</p>
             
             <div class="social-links">
                 <a href="https://www.linkedin.com/" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="mailto:contacto@medinternia.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="#" class="social-btn" title="ResearchGate"><i class="fas fa-book-medical"></i></a>
             </div>
         </header>
 
         <div class="bio-section">
             <div class="bio-card">
-                <h3><i class="fas fa-user-md"></i> Mi Misión</h3>
+                <h3><i class="fas fa-user-md"></i> ¿Quién soy realmente?</h3>
                 <p>
-                    Como médico internista, he vivido de primera mano la complejidad del diagnóstico clínico moderno. 
-                    Mi objetivo con <strong>Med InternIA</strong> es cerrar la brecha entre la medicina tradicional y las nuevas tecnologías, 
-                    empoderando a mis colegas para usar la Inteligencia Artificial no como un reemplazo, sino como una herramienta de precisión.
+                    Soy un médico como tú. Alguien que se levanta cada día con el deseo genuino de aprender algo nuevo, pero que se encontró con una barrera constante en la educación médica actual.
+                </p>
+                <div class="quote-box">
+                    "Me cansé de la 'titulitis'. Me harté de acumular diplomas de cursos llenos de teoría abstracta que prometen el futuro pero no ofrecen ni una sola herramienta de verdadera práctica clínica."
+                </div>
+                <p>
+                    No creé <strong>Med InternIA</strong> para presumir credenciales, sino para resolver un problema que yo mismo sufrí. Aquí no venimos a teorizar sobre el futuro; venimos a ensuciarnos las manos con código, datos y soluciones reales para nuestros pacientes.
                 </p>
             </div>
 
             <div class="bio-card" style="border-left-color: var(--accent);">
-                <h3><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Especialista en Medicina Interna</strong><br>
-                        <span style="color: #64748b;">Hospital Universitario [Su Hospital]</span>
-                    </li>
-                    <li>
-                        <strong>Experto en Salud Digital</strong><br>
-                        <span style="color: #64748b;">Pionero en la implementación de algoritmos predictivos en entornos hospitalarios.</span>
-                    </li>
-                </ul>
+                <h3><i class="fas fa-handshake"></i> Mi Compromiso</h3>
+                <p>
+                    Si buscas un académico de torre de marfil, este no es tu sitio. Pero si buscas a un colega que te explique cómo usar la IA "a pie de cama", sin filtros y sin relleno, bienvenido. 
+                </p>
+                <p style="margin-top: 1rem;">
+                    <strong>Aprendamos juntos lo que las facultades aún no enseñan.</strong>
+                </p>
             </div>
         </div>
 
