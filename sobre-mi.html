@@ -3,115 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mí | Med InternIA</title>
+    <title>Sobre Mí | Dr. Andrés Zorrilla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2C3E50; background-color: #ffffff; }
+        /* ESTILOS GLOBALES (Coherentes con el resto del sitio) */
+        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: #1e293b; background: var(--bg); margin: 0; }
         
-        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; }
-
         /* NAVEGACIÓN */
-        nav { background: linear-gradient(135deg, var(--primary), var(--dark)); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
-        nav ul { list-style: none; display: flex; gap: 2rem; }
-        nav a { color: white; text-decoration: none; font-weight: 500; }
+        nav { background: linear-gradient(135deg, var(--primary), var(--dark)); padding: 1.2rem 0; color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .logo { color: white; text-decoration: none; font-weight: bold; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: white; text-decoration: underline; }
 
-        /* HERO */
-        .about-hero { padding: 5rem 2rem; background: #fdfdfd; text-align: center; }
-        .about-hero h1 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .about-hero p { font-size: 1.4rem; color: #555; max-width: 850px; margin: 0 auto; line-height: 1.4; }
+        /* PERFIL HERO */
+        .profile-header {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-        /* CONTENIDO */
-        .container { max-width: 850px; margin: 0 auto; padding: 2rem 2rem 5rem 2rem; }
-        
-        .story-block { margin-bottom: 3.5rem; }
-        .story-block h2 { color: var(--dark); margin-bottom: 1.2rem; font-size: 1.8rem; }
-        
-        .profile-card { background: #f8fbff; border-radius: 20px; padding: 2.5rem; margin-bottom: 4rem; display: flex; align-items: center; gap: 2rem; border: 1px solid #e1e8ed; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        /* FOTOGRAFÍA - Aquí está la clave */
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover; /* Asegura que la foto no se deforme */
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+            padding: 5px;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,102,204,0.2);
+            margin-bottom: 1.5rem;
+        }
 
-        /* SECCIÓN APRENDIZ (NUEVA) */
-        .learner-box { background-color: #f0f7ff; padding: 3rem; border-radius: 20px; margin: 4rem 0; border: 1px dashed #0066CC; }
-        .learner-box h2 { color: #004999; margin-bottom: 1.5rem; text-align: center; border: none; }
-        .learner-box p { font-size: 1.1rem; color: #444; margin-bottom: 1rem; }
+        h1 { color: var(--dark); font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--accent); font-weight: bold; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* LINKEDIN */
-        .btn-container { text-align: center; margin-top: 3rem; }
-        .linkedin-btn { display: inline-flex; align-items: center; background: #0077b5; color: white; padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
-        .linkedin-btn:hover { background: #005a8a; transform: translateY(-2px); }
-        .linkedin-btn svg { width: 22px; height: 22px; margin-right: 12px; fill: white; }
+        /* SECCIONES DE TEXTO */
+        .bio-section { max-width: 800px; margin: 0 auto; text-align: left; }
+        .bio-card { background: white; padding: 2.5rem; border-radius: 15px; margin-bottom: 2rem; border-left: 5px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .bio-card h3 { color: var(--dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
 
-        footer { background: #2C3E50; color: white; text-align: center; padding: 3rem 1rem; }
+        /* REDES SOCIALES */
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 2rem; }
+        .social-btn { width: 50px; height: 50px; background: #eef2ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; transition: 0.3s; }
+        .social-btn:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
-        @media (max-width: 768px) { .profile-card { flex-direction: column; text-align: center; } .about-hero h1 { font-size: 2.2rem; } }
+        footer { text-align: center; padding: 4rem; color: #64748b; border-top: 1px solid #e2e8f0; margin-top: 4rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="container" style="padding: 0 2rem; max-width: 1200px;">
-            <div class="logo">🏥 Med InternIA</div>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="faq.html">Preguntas</a></li>
-            </ul>
+        <div class="container" style="padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="logo"><i class="fas fa-stethoscope"></i> Med InternIA</a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="faq.html">Preguntas Frecuentes</a>
+            </div>
         </div>
     </nav>
 
-    <header class="about-hero">
-        <div class="container" style="padding: 0;">
-            <h1>Hola, soy Andrés Zorrilla.</h1>
-            <p>Un médico que, tras 12 años entre urgencias y plantas de hospital, decidió entender la tecnología para que esta trabaje para nosotros.</p>
-        </div>
-    </header>
-
-    <main class="container">
+    <div class="container">
         
-        <div class="profile-card">
-            <img src="image_8b0541.png" alt="Andrés Zorrilla" class="profile-img">
-            <div>
-                <p><strong>Médico, Epidemiólogo y Residente de Medicina Interna.</strong></p>
-                <p style="font-size: 0.95rem; color: #666; margin-top: 0.5rem;">Con experiencia en centros de alta complejidad en Colombia y España, mi camino siempre ha sido buscar cómo los datos pueden mejorar el cuidado de nuestros pacientes.</p>
+        <header class="profile-header">
+            <img src="perfil.jpg" alt="Dr. Andrés Zorrilla" class="profile-img">
+            
+            <h1>Dr. Andrés Zorrilla</h1>
+            <p class="subtitle">Medicina Interna & Inteligencia Artificial</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:contacto@medinternia.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-btn" title="ResearchGate"><i class="fas fa-book-medical"></i></a>
+            </div>
+        </header>
+
+        <div class="bio-section">
+            <div class="bio-card">
+                <h3><i class="fas fa-user-md"></i> Mi Misión</h3>
+                <p>
+                    Como médico internista, he vivido de primera mano la complejidad del diagnóstico clínico moderno. 
+                    Mi objetivo con <strong>Med InternIA</strong> es cerrar la brecha entre la medicina tradicional y las nuevas tecnologías, 
+                    empoderando a mis colegas para usar la Inteligencia Artificial no como un reemplazo, sino como una herramienta de precisión.
+                </p>
+            </div>
+
+            <div class="bio-card" style="border-left-color: var(--accent);">
+                <h3><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;">
+                        <strong>Especialista en Medicina Interna</strong><br>
+                        <span style="color: #64748b;">Hospital Universitario [Su Hospital]</span>
+                    </li>
+                    <li>
+                        <strong>Experto en Salud Digital</strong><br>
+                        <span style="color: #64748b;">Pionero en la implementación de algoritmos predictivos en entornos hospitalarios.</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <article class="story-block">
-            <h2>Por qué nace Med InternIA</h2>
-            <p>Durante mucho tiempo busqué formaciones en Inteligencia Artificial que realmente me sirvieran en el hospital. Lo que encontraba solía ser o muy teórico, con matemáticas que no sabía cómo aplicar, o muy general, sin enseñarme a construir herramientas útiles.</p>
-            <p style="margin-top: 1rem;">Por eso, decidí aprender de forma autodidacta. Filtré todo el ruido tecnológico para quedarme con lo que de verdad nos ayuda a los internistas a diagnosticar mejor o a optimizar nuestro tiempo en una guardia.</p>
-        </article>
-
-        <section class="learner-box">
-            <h2>Un médico con ganas de aprender, como cualquier otro</h2>
-            <p>
-                A pesar de los años de experiencia, en el fondo sigo siendo ese médico que llega a la guardia con curiosidad. No me considero un "gurú" tecnológico; me considero un aprendiz constante. 
-            </p>
-            <p>
-                Mi intención no es dar cátedra desde un pedestal, sino sentarme contigo a descifrar estas herramientas. Empecé desde cero, igual que tú, y mi única función aquí es compartirte lo que he aprendido para que no tengas que hacer el camino solo. Solo necesitamos mantener viva esa voluntad de aprender que nos hizo elegir esta profesión.
-            </p>
-        </section>
-
-        <article class="story-block">
-            <h2>Hagámoslo práctico</h2>
-            <p>No quiero que seas un ingeniero, sino un <strong>médico aumentado</strong>. En este curso, mi objetivo es que aprendas haciendo: tocando el código, entendiendo los modelos y creando soluciones que podrías proponer mañana mismo en tu servicio hospitalario.</p>
-        </article>
-
-        <section class="btn-container">
-            <p style="margin-bottom: 1.5rem; color: #666;">¿Conectamos?</p>
-            <a href="https://www.linkedin.com/in/razorrillaa/" class="linkedin-btn" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                LinkedIn de Andrés Zorrilla
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="social-btn" style="width: auto; padding: 0 2rem; border-radius: 50px; display: inline-flex; gap: 10px;">
+                <i class="fas fa-arrow-left"></i> Volver al Curso
             </a>
-        </section>
+        </div>
 
-    </main>
+    </div>
 
     <footer>
-        <div class="container" style="padding: 0;">
-            <p style="font-weight: 600; margin-bottom: 0.5rem;">Med InternIA</p>
-            <p style="font-size: 0.85rem; opacity: 0.7;">&copy; 2026 Dr. Andrés Zorrilla. Formación clínica práctica.</p>
-        </div>
+        <p>&copy; 2026 Dr. Andrés Zorrilla | <strong>Med InternIA</strong></p>
     </footer>
 
 </body>
