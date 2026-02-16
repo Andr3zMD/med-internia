@@ -27,7 +27,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        /* NAVEGACIÓN CORREGIDA */
+        /* NAVEGACIÓN */
         nav {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             padding: 1rem 0;
@@ -79,8 +79,8 @@
             text-align: center;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; line-height: 1.2; }
-        .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
 
         .btn-main {
             background-color: var(--secondary);
@@ -89,90 +89,68 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
         }
 
-        .btn-main:hover { transform: translateY(-3px); background-color: #008f5a; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* SECCIÓN MÓDULOS */
+        /* GRID DE MÓDULOS */
         .modules-section { padding: 5rem 0; }
         .section-title { text-align: center; margin-bottom: 4rem; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
         
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .module-card {
             background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 15px;
+            padding: 2rem;
             text-decoration: none;
             color: inherit;
-            transition: all 0.4s ease;
+            transition: 0.3s;
             border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 5px; height: 100%;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
         }
 
         .module-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
             border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
-
-        .module-card:hover::before { width: 10px; }
 
         .module-card span {
             color: var(--primary);
-            font-weight: 800;
-            font-size: 0.85rem;
+            font-weight: bold;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .module-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-dark); }
-        .module-card p { color: var(--text-light); font-size: 0.95rem; }
+        .module-card h3 { margin-bottom: 1rem; color: var(--text-dark); }
+        .module-card p { color: var(--text-light); font-size: 0.9rem; }
 
-        /* FOOTER */
         footer {
             background: #0f172a;
             color: var(--white);
             padding: 4rem 0 2rem;
             text-align: center;
+            margin-top: 4rem;
         }
 
         .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
-        .footer-links a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
-        .footer-links a:hover { color: var(--white); }
-        
-        .copyright { font-size: 0.9rem; color: #64748b; border-top: 1px solid #1e293b; padding-top: 2rem; }
+        .footer-links a { color: #94a3b8; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-user-md"></i> Med InternIA
-            </a>
+            <a href="index.html" class="logo"><i class="fas fa-user-md"></i> Med InternIA</a>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="sobre-mi.html">Sobre Mí</a></li>
@@ -183,8 +161,8 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Inteligencia Artificial para el Internista Moderno</h1>
-            <p>Domina el Machine Learning y NLP aplicado a la clínica real. Formación técnica diseñada por médicos para médicos.</p>
+            <h1>IA para el Internista Moderno</h1>
+            <p>Formación técnica y clínica de alto nivel diseñada para liderar la transformación digital en salud.</p>
             <a href="modulo0.html" class="btn-main">EMPEZAR CURSO GRATIS</a>
         </div>
     </header>
@@ -192,51 +170,59 @@
     <section class="modules-section">
         <div class="container">
             <div class="section-title">
-                <h2>Programa Académico</h2>
-                <p>10 Módulos desde fundamentos hasta despliegue de modelos.</p>
+                <h2>Programa Completo</h2>
             </div>
 
             <div class="modules-grid">
                 <a href="modulo0.html" class="module-card">
                     <span>Módulo 0</span>
-                    <h3>Onboarding y Colab</h3>
-                    <p>Configuración del entorno de trabajo en la nube y manejo de Python básico para medicina.</p>
+                    <h3>Onboarding</h3>
+                    <p>Configuración de Google Colab y Python para medicina.</p>
                 </a>
-
                 <a href="modulo1.html" class="module-card">
                     <span>Módulo 1</span>
                     <h3>Fundamentos de ML</h3>
-                    <p>Principios de aprendizaje automático y preprocesamiento de datos clínicos.</p>
+                    <p>Aprendizaje supervisado y preprocesamiento de datos clínicos.</p>
                 </a>
-
                 <a href="modulo2.html" class="module-card">
                     <span>Módulo 2</span>
                     <h3>Modelos Predictivos</h3>
-                    <p>Regresión y clasificación aplicada a la predicción de riesgo y mortalidad hospitalaria.</p>
+                    <p>Clasificación y regresión aplicada a riesgo hospitalario.</p>
                 </a>
-
                 <a href="modulo3.html" class="module-card">
                     <span>Módulo 3</span>
-                    <h3>Deep Learning e Imágenes</h3>
-                    <p>Redes neuronales convolucionales aplicadas a radiología y dermatología clínica.</p>
+                    <h3>Deep Learning</h3>
+                    <p>Redes neuronales y visión artificial en imágenes médicas.</p>
                 </a>
-
                 <a href="modulo4.html" class="module-card">
                     <span>Módulo 4</span>
-                    <h3>Introducción al NLP</h3>
-                    <p>Procesamiento de Lenguaje Natural en notas médicas y registros electrónicos.</p>
+                    <h3>NLP Médico</h3>
+                    <p>Procesamiento de texto en notas y registros clínicos.</p>
                 </a>
-
+                <a href="modulo5.html" class="module-card">
+                    <span>Módulo 5</span>
+                    <h3>Análisis Bibliográfico</h3>
+                    <p>Extracción de información de literatura médica con IA.</p>
+                </a>
+                <a href="modulo6.html" class="module-card">
+                    <span>Módulo 6</span>
+                    <h3>Indicadores Asistenciales</h3>
+                    <p>Optimización de procesos y gestión hospitalaria con datos.</p>
+                </a>
                 <a href="modulo7.html" class="module-card">
                     <span>Módulo 7</span>
-                    <h3>Transformers y LLMs</h3>
-                    <p>Implementación de modelos BERT y GPT para asistentes médicos especializados.</p>
+                    <h3>Transformers y BERT</h3>
+                    <p>Uso de LLMs especializados en el dominio médico.</p>
                 </a>
-
+                <a href="modulo9.html" class="module-card">
+                    <span>Módulo 9</span>
+                    <h3>Ética y Gobernanza</h3>
+                    <p>Seguridad del paciente y regulación de algoritmos en salud.</p>
+                </a>
                 <a href="modulo10.html" class="module-card">
                     <span>Módulo 10</span>
                     <h3>Proyecto Final</h3>
-                    <p>Despliegue de tu aplicación médica funcional en entornos de producción.</p>
+                    <p>Despliegue y presentación de una solución funcional de IA.</p>
                 </a>
             </div>
         </div>
@@ -247,12 +233,9 @@
             <div class="footer-links">
                 <a href="index.html">Inicio</a>
                 <a href="sobre-mi.html">Sobre Mí</a>
-                <a href="faq.html">Preguntas Frecuentes</a>
-                <a href="https://www.linkedin.com/in/razorrillaa/" target="_blank">LinkedIn</a>
+                <a href="faq.html">FAQ</a>
             </div>
-            <p class="copyright">
-                &copy; 2026 Dr. Andrés Zorrilla | Med InternIA. Todos los derechos reservados bajo licencia restrictiva.
-            </p>
+            <p>&copy; 2026 Dr. Andrés Zorrilla | Med InternIA</p>
         </div>
     </footer>
 
