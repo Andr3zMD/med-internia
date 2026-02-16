@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 0: Onboarding | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1e293b; background-color: #f0f9ff; }
+        
+        /* COLORES ESPECÍFICOS PARA MÓDULO 0 (Cyan/Teal - Bienvenida) */
+        :root { --primary: #0ea5e9; --dark: #0369a1; --light: #e0f2fe; }
+
+        /* NAVEGACIÓN PRINCIPAL */
+        nav { background: linear-gradient(135deg, #0066CC, #004999); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+
+        /* HERO SECTION */
+        .hero { background: linear-gradient(135deg, var(--primary), #06b6d4); color: white; padding: 4rem 2rem; text-align: center; }
+        .module-badge { background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+        
+        /* CONTENEDOR PRINCIPAL */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        .content-section { background: white; padding: 3rem; border-radius: 12px; margin: 3rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* CARDS DE PASOS */
+        .step-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+        .step-number { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+
+        /* BOTONES */
+        .btn { display: inline-block; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-primary { background: #00A86B; color: white; }
+        .btn-primary:hover { background: #008f5b; }
+        .btn-colab { background: #f59e0b; color: white; }
+        .btn-colab:hover { background: #d97706; }
+
+        /* NAVEGACIÓN ENTRE MÓDULOS */
+        .module-navigation { display: flex; justify-content: space-between; margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 2rem; }
+        .nav-btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .nav-btn-prev { background: white; color: #64748b; border: 2px solid #cbd5e1; }
+        .nav-btn-prev:hover { background: #f1f5f9; color: #334155; }
+        .nav-btn-next { background: #0066CC; color: white; border: 2px solid #0066CC; }
+        .nav-btn-next:hover { background: #004999; border-color: #004999; }
+
+        /* FOOTER */
+        footer { background: #2C3E50; color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+
+        @media (max-width: 768px) { .module-navigation { flex-direction: column; gap: 1rem; } .nav-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#modulos">M

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 7: Fine-Tuning de BERT Clínico | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1e293b; background-color: #faf5ff; }
+        
+        /* COLORES TEMA MÓDULO 7 (Púrpura - Fine Tuning/BERT) */
+        :root { --primary: #9333ea; --dark: #6b21a8; --light: #f3e8ff; }
+
+        /* NAVEGACIÓN */
+        nav { background: linear-gradient(135deg, #0066CC, #004999); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary), #c084fc); color: white; padding: 4rem 2rem; text-align: center; }
+        .module-badge { background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+
+        /* CONTENEDOR */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        .content-section { background: white; padding: 3rem; border-radius: 12px; margin: 3rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* ELEMENTOS EDUCATIVOS */
+        h2 { color: var(--dark); margin-bottom: 1.5rem; }
+        
+        .process-steps { counter-reset: step; list-style: none; padding: 0; }
+        .process-steps li { position: relative; padding-left: 3rem; margin-bottom: 1.5rem; }
+        .process-steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; background: var(--light); color: var(--primary); border-radius: 50%; text-align: center; line-height: 2.5rem; font-weight: bold; border: 2px solid var(--primary); }
+        .process-steps strong { color: var(--dark); }
+
+        /* BOTONES */
+        .btn-colab { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; border: 2px solid white; transition: 0.3s; display: inline-block; }
+        .btn-colab:hover { background: var(--light); color: var(--dark); border-color: var(--light); }
+
+        /* NAVEGACIÓN MÓDULOS */
+        .module-navigation { display: flex; justify-content: space-between; margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 2rem; }
+        .nav-btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .nav-btn-prev { background: white; color: #64748b; border: 2px solid #cbd5e1; }
+        .nav-btn-prev:hover { background: #f1f5f9; color: #334155; }
+        .nav-btn-next { background: var(--primary); color: white; border: 2px solid var(--primary); }
+        .nav-btn-next:hover { background: var(--dark); border-color: var(--dark); }
+
+        /* FOOTER */
+        footer { background: #2C3E50; color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+
+        @media (max-width: 768px) { .module-navigation { flex-direction: column; gap: 1rem; } .nav-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#modulos">Módulos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="module-badge">MÓDULO 7 DE 10</div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Fine-Tuning de BERT Clínico</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Cómo "especializar" un cerebro de IA genérico para que hable medicina fluida.</p>
+    </section>
+
+    <div class="container">
+        
+        <section class="content-section">
+            <h2>🧬 El Arte del "Transfer Learning"</h2>
+            <p style="margin-bottom: 1.5rem; color: #475569;">
+                Los modelos genéricos (como el BERT original de Google) saben mucho inglés, pero poco de medicina. 
+                En este módulo, tomaremos modelos como <strong>BioBERT</strong> o <strong>ClinicalBERT</strong> (ya pre-entrenados con PubMed y MIMIC-III) y les haremos un "ajuste fino" (Fine-Tuning) para tu tarea específica.
+            </p>
+            
+            <div style="background: #f3e8ff; padding: 2rem; border-radius: 8px; border-left: 5px solid var(--primary); margin-top: 2rem;">
+                <h3 style="color: var(--dark); margin-bottom: 1rem;">🚀 Flujo de Trabajo (Pipeline):</h3>
+                <ol class="process-steps">
+                    <li><strong>Selección del Modelo Base:</strong> Elegir entre BioBERT, PubMedBERT o ClinicalBERT.</li>
+                    <li><strong>Preparación del Dataset:</strong> Tus notas clínicas etiquetadas (ej. "Riesgo Suicida" vs "Control Normal").</li>
+                    <li><strong>Fine-Tuning:</strong> Re-entrenar las últimas capas del modelo con tus datos.</li>
+                    <li><strong>Inferencia:</strong> Usar el nuevo modelo "especialista" para clasificar nuevos pacientes.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3 style="color: var(--dark); margin-bottom: 1rem;">📋 Requisitos Previos</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">✅ Módulo 6 completado (Aplicaciones NLP).</li>
+                <li style="margin-bottom: 0.5rem;">✅ Conocimientos sólidos de PyTorch o TensorFlow (visto en Módulo 3/5).</li>
+                <li style="margin-bottom: 0.5rem;">✅ Uso obligatorio de GPU (Colab T4 o superior).</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="background: linear-gradient(135deg, var(--primary), #c084fc); color: white; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">👨‍💻 Taller: Entrenando a BioBERT</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Vamos a tomar un modelo BioBERT y lo entrenaremos para detectar efectos adversos de medicamentos en texto libre.
+            </p>
+            <a href="https://colab.research.google.com/drive/1AIAjzFUb7UaWrmfojEd5qorRSTKXcJqJ?usp=sharing" target="_blank" class="btn-colab">
+                📓 ABRIR NOTEBOOK EN COLAB
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">*Este proceso puede tomar 15-20 minutos de entrenamiento en GPU</p>
+        </section>
+
+        <div class="module-navigation">
+            <a href="modulo6.html" class="nav-btn nav-btn-prev">
+                ← Módulo 6: Aplicaciones NLP
+            </a>
+            <a href="modulo8.html" class="nav-btn nav-btn-next">
+                Módulo 8: LLMs y Copilotos →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Med InternIA</p>
+            <p style="font-size: 0.9rem; color: #BDC3C7;">&copy; 2026 Dr. Andrés Zorrilla. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; color: #95A5A6; margin-top: 5px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Prohibida la reproducción total o parcial de este contenido sin autorización previa. 
+                Uso exclusivo para fines educativos médicos.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

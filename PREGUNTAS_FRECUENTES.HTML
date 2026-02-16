@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #2C3E50; background-color: #F8F9FA; }
+        
+        /* COLORES DE MARCA */
+        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; }
+
+        /* NAVEGACIÓN */
+        nav { background: linear-gradient(135deg, var(--primary), var(--dark)); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+
+        /* HERO */
+        .hero { background: white; padding: 4rem 2rem; text-align: center; border-bottom: 1px solid #eee; }
+        .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto; }
+
+        /* CONTENEDOR FAQ */
+        .faq-container { max-width: 800px; margin: 3rem auto; padding: 0 2rem; }
+        
+        /* ESTILO ACORDEÓN (DETAILS/SUMMARY) */
+        details { background: white; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); overflow: hidden; transition: all 0.3s; border: 1px solid #eee; }
+        details[open] { box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
+        
+        summary { padding: 1.5rem; cursor: pointer; font-weight: 600; color: #2C3E50; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; } /* Ocultar flecha por defecto */
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--primary); font-weight: bold; transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details[open] summary { border-bottom: 1px solid #f0f0f0; background-color: #f8fbff; color: var(--primary); }
+        
+        .answer { padding: 1.5rem; color: #4a5568; background: white; font-size: 1rem; }
+
+        /* CATEGORÍAS */
+        .category-title { color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 2rem 0 1rem 0; font-weight: 700; border-left: 4px solid var(--accent); padding-left: 10px; }
+
+        /* CTA FINAL */
+        .cta-box { text-align: center; margin: 4rem 0; padding: 3rem 2rem; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-radius: 15px; }
+        .btn-cta { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+
+        /* FOOTER */
+        footer { background: #2C3E50; color: white; text-align: center; padding: 2rem; margin-top: auto; }
+
+        @media (max-width: 768px) { nav ul { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#modulos">Módulos</a></li>
+                <li><a href="inscripcion.html">Inscripción</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Centro de Ayuda</h1>
+        <p>Resolvemos tus dudas sobre el curso de Inteligencia Artificial para Residentes e Internistas.</p>
+    </div>
+
+    <div class="faq-container">
+
+        <div class="category-title">Generalidades</div>
+
+        <details open>
+            <summary>¿Necesito saber programar o ser bueno en matemáticas?</summary>
+            <div class="answer">
+                <p><strong>Absolutamente no.</strong> Este curso está diseñado por médicos, para médicos. Empezamos desde el "Módulo 0" asumiendo que nunca has escrito una línea de código. Usamos herramientas intuitivas y explicamos las matemáticas con analogías clínicas, no con fórmulas complejas.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>¿Cuánto tiempo necesito dedicarle a la semana?</summary>
+            <div class="answer">
+                <p>El curso es 100% asincrónico (a tu ritmo). Recomendamos dedicar entre <strong>3 a 5 horas por módulo</strong>. Puedes hacerlo durante una guardia tranquila o los fines de semana. Tienes acceso de por vida al material.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Soy de otra especialidad (Cirugía, Pediatría...), ¿me sirve?</summary>
+            <div class="answer">
+                <p>¡Sí! Aunque los casos clínicos (diabetes, riesgo cardiovascular) están enfocados en Medicina Interna, los fundamentos de Machine Learning, NLP y Visión por Computadora son universales para cualquier rama de la salud.</p>
+            </div>
+        </details>
+
+        <div class="category-title">Requisitos Técnicos</div>
+
+        <details>
+            <summary>¿Necesito una computadora potente o costosa?</summary>
+            <div class="answer">
+                <p>No. Usamos <strong>Google Colab</strong>, una herramienta gratuita que se ejecuta en la nube. Todo el procesamiento pesado se hace en los servidores de Google, no en tu máquina. Puedes usar cualquier laptop básica (Windows o Mac) con navegador Chrome.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>¿Tengo que pagar licencias de software?</summary>
+            <div class="answer">
+                <p>No. Usamos Python y bibliotecas de código abierto (gratuitas). Para el módulo de LLMs (Módulo 8), explicamos cómo usar opciones gratuitas o de muy bajo costo, pero no es obligatorio pagar suscripciones mensuales.</p>
+            </div>
+        </details>
+
+        <div class="category-title">Certificación y Validez</div>
+
+        <details>
+            <summary>¿Obtengo un certificado al finalizar?</summary>
+            <div class="answer">
+                <p>Sí. Al completar el <strong>Módulo 10 (Proyecto Final)</strong>, recibirás un certificado digital de finalización de "Med InternIA" a nombre del Dr. Andrés Zorrilla, verificando 60 horas de formación teórico-práctica.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>¿Tiene valor curricular oficial?</summary>
+            <div class="answer">
+                <p>El certificado valida habilidades técnicas demostrables. Aunque actualmente estamos en proceso de aval universitario, el portafolio de proyectos que crearás (GitHub) tiene un peso inmenso para aplicar a fellowships o puestos de investigación.</p>
+            </div>
+        </details>
+
+        <div class="cta-box">
+            <h2 style="margin-bottom: 1rem;">¿Listo para actualizar tu perfil médico?</h2>
+            <p>No dejes que la tecnología avance sin ti. Únete hoy mismo.</p>
+            <a href="inscripcion.html" class="btn-cta">🎓 Inscribirme Gratis Ahora</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Med InternIA</p>
+            <p style="font-size: 0.9rem; color: #BDC3C7;">&copy; 2026 Dr. Andrés Zorrilla. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

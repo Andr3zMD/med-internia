@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 9: Ética, Legalidad y Gobernanza | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1e293b; background-color: #eef2ff; }
+        
+        /* COLORES TEMA MÓDULO 9 (Indigo Oscuro - Legal/Ética) */
+        :root { --primary: #3730a3; --dark: #1e1b4b; --light: #c7d2fe; }
+
+        /* NAVEGACIÓN */
+        nav { background: linear-gradient(135deg, #0066CC, #004999); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary), #6366f1); color: white; padding: 4rem 2rem; text-align: center; }
+        .module-badge { background: rgba(255,255,255,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+
+        /* CONTENEDOR */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        .content-section { background: white; padding: 3rem; border-radius: 12px; margin: 3rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* ELEMENTOS EDUCATIVOS */
+        h2 { color: var(--dark); margin-bottom: 1.5rem; }
+        
+        .alert-box { background: #fee2e2; border-left: 5px solid #dc2626; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 4px; }
+        .alert-box h4 { color: #991b1b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        
+        .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .legal-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px; }
+
+        /* BOTONES */
+        .btn-colab { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; border: 2px solid white; transition: 0.3s; display: inline-block; }
+        .btn-colab:hover { background: var(--light); color: var(--dark); border-color: var(--light); }
+
+        /* NAVEGACIÓN MÓDULOS */
+        .module-navigation { display: flex; justify-content: space-between; margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 2rem; }
+        .nav-btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .nav-btn-prev { background: white; color: #64748b; border: 2px solid #cbd5e1; }
+        .nav-btn-prev:hover { background: #f1f5f9; color: #334155; }
+        .nav-btn-next { background: var(--primary); color: white; border: 2px solid var(--primary); }
+        .nav-btn-next:hover { background: var(--dark); border-color: var(--dark); }
+
+        /* FOOTER */
+        footer { background: #2C3E50; color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+
+        @media (max-width: 768px) { .module-navigation { flex-direction: column; gap: 1rem; } .nav-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#modulos">Módulos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="module-badge">MÓDULO 9 DE 10</div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Gobernanza y Ética en IA Médica</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">"Primum non nocere": Evitando sesgos, errores y problemas legales.</p>
+    </section>
+
+    <div class="container">
+        
+        <section class="content-section">
+            <h2>⚖️ El Algoritmo no es Neutral</h2>
+            <p style="margin-bottom: 1.5rem; color: #475569;">
+                Antes de desplegar cualquier modelo en el hospital, debemos auditarlo. Un algoritmo mal calibrado puede amplificar discriminaciones raciales o de género. En este módulo aprenderemos a ser "Auditores Clínicos de IA".
+            </p>
+            
+            <div class="alert-box">
+                <h4>🚫 El peligro del "Black Box"</h4>
+                <p>En medicina, no basta con que la IA acierte; debemos saber <strong>por qué</strong> lo hizo. Hablaremos de XAI (Explainable AI) y mapas de calor (SHAP/LIME).</p>
+            </div>
+
+            <div class="legal-grid">
+                <div class="legal-card">
+                    <h4 style="color: var(--primary);">🔒 Privacidad</h4>
+                    <p>Manejo de datos sensibles, anonimización robusta y cumplimiento con regulaciones (HIPAA, GDPR).</p>
+                </div>
+                <div class="legal-card">
+                    <h4 style="color: var(--primary);">⚖️ Sesgos (Bias)</h4>
+                    <p>Detectar si tu modelo funciona peor en poblaciones minoritarias o vulnerables.</p>
+                </div>
+                <div class="legal-card">
+                    <h4 style="color: var(--primary);">📜 Responsabilidad</h4>
+                    <p>¿Quién tiene la culpa si la IA se equivoca? El marco legal actual para el médico.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: linear-gradient(135deg, var(--primary), #6366f1); color: white; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">👨‍💻 Taller: Auditoría de Algoritmos</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Usaremos herramientas de "Fairness" para detectar si un modelo de dermatología tiene sesgos raciales y aprenderemos a corregirlo.
+            </p>
+            <a href="https://colab.research.google.com/drive/1LjCmb_UvpnpSI9ingCtONJzWlQzwfJRT?usp=sharing" target="_blank" class="btn-colab">
+                📓 ABRIR NOTEBOOK DE AUDITORÍA
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">*Incluye bibliotecas como Fairlearn y AIF360</p>
+        </section>
+
+        <div class="module-navigation">
+            <a href="modulo8.html" class="nav-btn nav-btn-prev">
+                ← Módulo 8: LLMs y Copilotos
+            </a>
+            <a href="modulo10.html" class="nav-btn nav-btn-next">
+                Módulo 10: Proyecto Final →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Med InternIA</p>
+            <p style="font-size: 0.9rem; color: #BDC3C7;">&copy; 2026 Dr. Andrés Zorrilla. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; color: #95A5A6; margin-top: 5px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Prohibida la reproducción total o parcial de este contenido sin autorización previa. 
+                Uso exclusivo para fines educativos médicos.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

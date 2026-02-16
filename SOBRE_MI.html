@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #2C3E50; background-color: #ffffff; }
+        
+        :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; }
+
+        /* NAVEGACIÓN */
+        nav { background: linear-gradient(135deg, var(--primary), var(--dark)); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; }
+
+        /* HERO */
+        .about-hero { padding: 5rem 2rem; background: #fdfdfd; text-align: center; }
+        .about-hero h1 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .about-hero p { font-size: 1.4rem; color: #555; max-width: 850px; margin: 0 auto; line-height: 1.4; }
+
+        /* CONTENIDO */
+        .container { max-width: 850px; margin: 0 auto; padding: 2rem 2rem 5rem 2rem; }
+        
+        .story-block { margin-bottom: 3.5rem; }
+        .story-block h2 { color: var(--dark); margin-bottom: 1.2rem; font-size: 1.8rem; }
+        
+        .profile-card { background: #f8fbff; border-radius: 20px; padding: 2.5rem; margin-bottom: 4rem; display: flex; align-items: center; gap: 2rem; border: 1px solid #e1e8ed; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+
+        /* SECCIÓN APRENDIZ (NUEVA) */
+        .learner-box { background-color: #f0f7ff; padding: 3rem; border-radius: 20px; margin: 4rem 0; border: 1px dashed #0066CC; }
+        .learner-box h2 { color: #004999; margin-bottom: 1.5rem; text-align: center; border: none; }
+        .learner-box p { font-size: 1.1rem; color: #444; margin-bottom: 1rem; }
+
+        /* LINKEDIN */
+        .btn-container { text-align: center; margin-top: 3rem; }
+        .linkedin-btn { display: inline-flex; align-items: center; background: #0077b5; color: white; padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
+        .linkedin-btn:hover { background: #005a8a; transform: translateY(-2px); }
+        .linkedin-btn svg { width: 22px; height: 22px; margin-right: 12px; fill: white; }
+
+        footer { background: #2C3E50; color: white; text-align: center; padding: 3rem 1rem; }
+
+        @media (max-width: 768px) { .profile-card { flex-direction: column; text-align: center; } .about-hero h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container" style="padding: 0 2rem; max-width: 1200px;">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="faq.html">Preguntas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <div class="container" style="padding: 0;">
+            <h1>Hola, soy Andrés Zorrilla.</h1>
+            <p>Un médico que, tras 12 años entre urgencias y plantas de hospital, decidió entender la tecnología para que esta trabaje para nosotros.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="profile-card">
+            <img src="image_8b0541.png" alt="Andrés Zorrilla" class="profile-img">
+            <div>
+                <p><strong>Médico, Epidemiólogo y Residente de Medicina Interna.</strong></p>
+                <p style="font-size: 0.95rem; color: #666; margin-top: 0.5rem;">Con experiencia en centros de alta complejidad en Colombia y España, mi camino siempre ha sido buscar cómo los datos pueden mejorar el cuidado de nuestros pacientes.</p>
+            </div>
+        </div>
+
+        <article class="story-block">
+            <h2>Por qué nace Med InternIA</h2>
+            <p>Durante mucho tiempo busqué formaciones en Inteligencia Artificial que realmente me sirvieran en el hospital. Lo que encontraba solía ser o muy teórico, con matemáticas que no sabía cómo aplicar, o muy general, sin enseñarme a construir herramientas útiles.</p>
+            <p style="margin-top: 1rem;">Por eso, decidí aprender de forma autodidacta. Filtré todo el ruido tecnológico para quedarme con lo que de verdad nos ayuda a los internistas a diagnosticar mejor o a optimizar nuestro tiempo en una guardia.</p>
+        </article>
+
+        <section class="learner-box">
+            <h2>Un médico con ganas de aprender, como cualquier otro</h2>
+            <p>
+                A pesar de los años de experiencia, en el fondo sigo siendo ese médico que llega a la guardia con curiosidad. No me considero un "gurú" tecnológico; me considero un aprendiz constante. 
+            </p>
+            <p>
+                Mi intención no es dar cátedra desde un pedestal, sino sentarme contigo a descifrar estas herramientas. Empecé desde cero, igual que tú, y mi única función aquí es compartirte lo que he aprendido para que no tengas que hacer el camino solo. Solo necesitamos mantener viva esa voluntad de aprender que nos hizo elegir esta profesión.
+            </p>
+        </section>
+
+        <article class="story-block">
+            <h2>Hagámoslo práctico</h2>
+            <p>No quiero que seas un ingeniero, sino un <strong>médico aumentado</strong>. En este curso, mi objetivo es que aprendas haciendo: tocando el código, entendiendo los modelos y creando soluciones que podrías proponer mañana mismo en tu servicio hospitalario.</p>
+        </article>
+
+        <section class="btn-container">
+            <p style="margin-bottom: 1.5rem; color: #666;">¿Conectamos?</p>
+            <a href="https://www.linkedin.com/in/razorrillaa/" class="linkedin-btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn de Andrés Zorrilla
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container" style="padding: 0;">
+            <p style="font-weight: 600; margin-bottom: 0.5rem;">Med InternIA</p>
+            <p style="font-size: 0.85rem; opacity: 0.7;">&copy; 2026 Dr. Andrés Zorrilla. Formación clínica práctica.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 10: Proyecto Final | Med InternIA</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1e293b; background-color: #ecfdf5; }
+        
+        /* COLORES TEMA MÓDULO 10 (Esmeralda/Oro - Graduación) */
+        :root { --primary: #059669; --dark: #064e3b; --light: #d1fae5; --gold: #f59e0b; }
+
+        /* NAVEGACIÓN */
+        nav { background: linear-gradient(135deg, #0066CC, #004999); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
+        nav a:hover { opacity: 0.8; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary), #34d399); color: white; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::after { content: "🏆"; font-size: 10rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.1; pointer-events: none; }
+        .module-badge { background: var(--gold); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; display: inline-block; margin-bottom: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+        /* CONTENEDOR */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+        .content-section { background: white; padding: 3rem; border-radius: 12px; margin: 3rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* ELEMENTOS EDUCATIVOS */
+        h2 { color: var(--dark); margin-bottom: 1.5rem; }
+        
+        .phase-list { counter-reset: phase; list-style: none; padding: 0; }
+        .phase-list li { position: relative; padding-left: 3.5rem; margin-bottom: 2rem; }
+        .phase-list li::before { counter-increment: phase; content: counter(phase); position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; background: var(--primary); color: white; border-radius: 50%; text-align: center; line-height: 2.5rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .phase-list h4 { margin-bottom: 0.5rem; color: #065f46; font-size: 1.2rem; }
+
+        /* BOTONES */
+        .btn-colab { background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; border: 2px solid white; transition: 0.3s; display: inline-block; }
+        .btn-colab:hover { background: var(--light); color: var(--dark); border-color: var(--light); }
+
+        /* NAVEGACIÓN MÓDULOS */
+        .module-navigation { display: flex; justify-content: space-between; margin-top: 4rem; border-top: 2px solid #e2e8f0; padding-top: 2rem; }
+        .nav-btn { padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .nav-btn-prev { background: white; color: #64748b; border: 2px solid #cbd5e1; }
+        .nav-btn-prev:hover { background: #f1f5f9; color: #334155; }
+        .nav-btn-finish { background: var(--gold); color: white; border: 2px solid var(--gold); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
+        .nav-btn-finish:hover { background: #d97706; border-color: #d97706; transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer { background: #2C3E50; color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+
+        @media (max-width: 768px) { .module-navigation { flex-direction: column; gap: 1rem; } .nav-btn { width: 100%; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">🏥 Med InternIA</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#modulos">Módulos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="module-badge">MÓDULO 10 DE 10</div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Proyecto Final de Implementación</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">De estudiante a creador: Desarrolla tu propia solución de IA Médica.</p>
+    </section>
+
+    <div class="container">
+        
+        <section class="content-section">
+            <h2 style="text-align: center;">🎓 El Trabajo de Grado</h2>
+            <p style="margin-bottom: 2rem; color: #475569; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Has recorrido el camino desde los fundamentos hasta los LLMs y la ética. Ahora es tu turno. 
+                El objetivo de este módulo es integrar todo lo aprendido en un prototipo funcional "End-to-End".
+            </p>
+            
+            <div style="background: #f0fdf4; border: 2px dashed var(--primary); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                <h3 style="color: var(--dark); margin-bottom: 1.5rem;">🚀 Fases del Proyecto:</h3>
+                <ul class="phase-list">
+                    <li>
+                        <h4>Definición del Problema Clínico</h4>
+                        <p>¿Qué dolor quieres resolver? (Ej. "Tardo mucho codificando diagnósticos", "Se nos escapan pacientes con sepsis en urgencias").</p>
+                    </li>
+                    <li>
+                        <h4>Selección de Datos y Modelo</h4>
+                        <p>Elige el dataset adecuado (tabular, imágenes o texto) y el algoritmo (Random Forest, CNN, BERT) que mejor se adapte.</p>
+                    </li>
+                    <li>
+                        <h4>Desarrollo y Validación</h4>
+                        <p>Entrena tu modelo en Colab y, lo más importante, <strong>mide sus errores</strong>. ¿Es seguro para un paciente?</p>
+                    </li>
+                    <li>
+                        <h4>Pitch de Implementación</h4>
+                        <p>Diseña una diapositiva explicando cómo se integraría esto en el flujo de trabajo real del hospital.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" style="background: linear-gradient(135deg, var(--primary), #059669); color: white; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">🏆 Tu Lienzo en Blanco</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Hemos preparado una plantilla maestra en Colab que te guiará paso a paso para estructurar tu proyecto final.
+            </p>
+            <a href="https://colab.research.google.com/drive/11sT24T5L6-n8tMw321bKgeFYt3iuno4m?usp=sharing" target="_blank" class="btn-colab">
+                📓 ABRIR PLANTILLA DE PROYECTO
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">*Al finalizar, podrás descargar tu certificado</p>
+        </section>
+
+        <div class="module-navigation">
+            <a href="modulo9.html" class="nav-btn nav-btn-prev">
+                ← Módulo 9: Ética y Regulación
+            </a>
+            <a href="index.html" class="nav-btn nav-btn-finish">
+                🎉 Finalizar Curso (Ir al Inicio)
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Med InternIA</p>
+            <p style="font-size: 0.9rem; color: #BDC3C7;">&copy; 2026 Dr. Andrés Zorrilla. Todos los derechos reservados.</p>
+            <p style="font-size: 0.8rem; color: #95A5A6; margin-top: 5px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Prohibida la reproducción total o parcial de este contenido sin autorización previa. 
+                Uso exclusivo para fines educativos médicos.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
