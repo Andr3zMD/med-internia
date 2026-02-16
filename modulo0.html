@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 0: Onboarding y Entorno Técnico | Med InternIA</title>
+    <title>Módulo 0: Onboarding y Entorno de Trabajo | Med InternIA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary: #0066CC; --dark: #004999; --accent: #00A86B; --bg: #f8fafc; }
@@ -13,8 +13,24 @@
         .content-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         h1 { color: var(--dark); font-size: 2.5rem; border-bottom: 4px solid var(--primary); padding-bottom: 1rem; }
         
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin: 2.5rem 0; border-radius: 15px; overflow: hidden; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-wrapper { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            margin: 2.5rem 0; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            background: #000; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+        }
+        .video-wrapper iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
         
         .instruction-step { background: #f1f5f9; border-left: 5px solid var(--accent); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 10px 10px 0; }
         .shortcut { background: var(--dark); color: white; padding: 0.3rem 0.8rem; border-radius: 5px; font-family: 'Courier New', monospace; font-weight: bold; }
@@ -22,7 +38,6 @@
         .btn { padding: 1rem 2.2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
         .btn-next { background: var(--primary); color: white; }
         .btn-back { background: #e2e8f0; color: #475569; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -35,33 +50,33 @@
 
     <div class="container">
         <article class="content-card">
-            <h1>Módulo 0: Onboarding y Entorno de Trabajo</h1>
+            <h1>Módulo 0: Introducción a Google Colab</h1>
             
-            <p>Bienvenido al primer paso de su transformación digital. Para este programa académico, utilizaremos <strong>Google Colaboratory</strong> (Colab). Esta plataforma nos permite ejecutar algoritmos de Inteligencia Artificial directamente en la nube, sin necesidad de instalar software complejo en su equipo.</p>
+            <p>Bienvenido a su entorno de práctica. En Med InternIA utilizaremos <strong>Google Colaboratory</strong>, una herramienta en la nube que le permite ejecutar código Python y modelos de IA sin necesidad de instalaciones complejas.</p>
 
             <div class="instruction-step">
-                <h3><i class="fab fa-youtube"></i> Tutorial: ¿Cómo funciona Google Colab?</h3>
-                <p>En el siguiente video en español, aprenderá a navegar por la interfaz, crear celdas y gestionar su entorno de trabajo.</p>
+                <h3><i class="fab fa-youtube"></i> Tutorial: ¿Qué es y cómo funciona Colab?</h3>
+                <p>He seleccionado este video en español que explica paso a paso la interfaz de los "cuadernos" (notebooks) y el uso de las celdas.</p>
             </div>
 
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/nF_T6Wpsj68" title="Tutorial Google Colab Español" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nF_T6Wpsj68" title="Introducción a Google Colab" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
-            <h2>Interacción y Ejecución: Fase de Estudio</h2>
-            <p>Un cuaderno de Colab no es un documento estático; es un laboratorio vivo. Se compone de celdas de <strong>texto</strong> para la teoría y celdas de <strong>código</strong> para la práctica clínica.</p>
+            <h2>Lógica de Estudio: Ejecución Activa</h2>
+            <p>Un cuaderno de Colab se organiza en celdas de <strong>texto</strong> (como esta guía) y celdas de <strong>código</strong> (donde ocurre la magia de la IA). No es una lectura pasiva; es una fase de estudio dinámica.</p>
 
             <div class="instruction-step" style="border-left-color: var(--primary);">
-                <strong><i class="fas fa-keyboard"></i> El Comando Esencial:</strong> Para ejecutar el contenido de una celda y avanzar a la siguiente fase de su estudio, debe presionar: <span class="shortcut">Shift + Enter</span>. 
+                <strong><i class="fas fa-keyboard"></i> El Comando Maestro:</strong> Para procesar el contenido de una celda y validar su avance en el curso, debe presionar siempre: <span class="shortcut">Shift + Enter</span>. 
                 <br><br>
-                <em>Esta acción procesa los datos y valida el progreso de su aprendizaje en tiempo real.</em>
+                <em>Este comando "dispara" el algoritmo y le muestra el resultado clínico inmediatamente debajo de la celda.</em>
             </div>
 
-            <h2>Pasos Operativos Iniciales:</h2>
+            <h2>Recomendaciones Técnicas:</h2>
             <ol>
-                <li><strong>Log-in:</strong> Acceda con su cuenta de Google para guardar sus avances.</li>
-                <li><strong>Conexión:</strong> Haga clic en el botón "Conectar" (esquina superior derecha) para activar los recursos de procesamiento.</li>
-                <li><strong>Práctica:</strong> Intente escribir una instrucción simple y ejecútela con <span class="shortcut">Shift + Enter</span>.</li>
+                <li><strong>Conexión:</strong> Pulse el botón "Conectar" arriba a la derecha para asignar recursos de cómputo.</li>
+                <li><strong>Copia:</strong> Guarde sus progresos en Google Drive.</li>
+                <li><strong>Practique:</strong> Pruebe su primera celda de código con <span class="shortcut">Shift + Enter</span>.</li>
             </ol>
 
             <div class="nav-buttons">
@@ -71,4 +86,8 @@
         </article>
     </div>
 
-    <footer style="text-align: center; padding: 2rem; color: #
+    <footer style="text-align: center; padding: 2rem; color: #64748b;">
+        &copy; 2026 Dr. Andrés Zorrilla | IA para Médicos Internistas
+    </footer>
+</body>
+</html>
