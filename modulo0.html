@@ -20,12 +20,33 @@
         .benefit-item { background: #f1f5f9; padding: 1.5rem; border-radius: 15px; border-left: 5px solid var(--primary); }
         .benefit-item strong { color: var(--dark); display: block; margin-bottom: 0.5rem; }
 
+        /* Contenedor de Video */
+        .video-wrapper { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            margin: 3rem 0; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            background: #000; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
+            border: 4px solid #fff;
+        }
+        .video-wrapper iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
+
         /* Botón de Acción */
         .cta-container { text-align: center; background: #eef2ff; padding: 3rem; border-radius: 20px; border: 2px solid var(--primary); margin: 3rem 0; }
         .btn-colab { background: var(--warning); color: white; padding: 1.2rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; box-shadow: 0 5px 20px rgba(249, 171, 0, 0.4); }
         .btn-colab:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(249, 171, 0, 0.5); }
 
-        /* Tutorial Steps */
+        /* Pasos Tutorial */
         .step-card { border: 1px solid #e2e8f0; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; background: #fff; transition: 0.3s; }
         .step-card:hover { border-color: var(--primary); background: #fcfdfe; }
         .step-number { background: var(--primary); color: white; width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin-bottom: 1rem; }
@@ -50,32 +71,36 @@
             <h1>Onboarding: Su Quirófano Digital</h1>
             <p class="intro-text">Para un médico interesado en Machine Learning (ML), Deep Learning (DL) y Procesamiento de Lenguaje Natural (PLN), la tecnología no debe ser una barrera, sino un aliado. Bienvenido a la configuración de su entorno de experimentación clínica.</p>
 
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/IYDH9ZYhoSY" title="Tutorial Definitivo de Google Colab" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
             <h2><i class="fas fa-microchip"></i> ¿Qué es Google Colaboratory?</h2>
             <p>Es el estándar actual para la ciencia de datos. Imagine un entorno en la nube que le otorga superpoderes computacionales sin necesidad de configuraciones técnicas tediosas. Colab es el espacio donde sus algoritmos cobrarán vida.</p>
             
             <div class="benefit-grid">
                 <div class="benefit-item">
                     <strong>Ausencia de Instalación Local</strong>
-                    Inicie la programación en Python de forma inmediata, sin gestionar bibliotecas complejas ni librerías de escritorio.
+                    Inicie la programación en Python de forma inmediata, sin gestionar bibliotecas complejas.
                 </div>
                 <div class="benefit-item">
                     <strong>Arquitectura Intuitiva</strong>
                     Entorno diseñado para ser accesible, minimizando la curva de aprendizaje para profesionales de la salud.
                 </div>
                 <div class="benefit-item">
-                    <strong>Integración con el Ecosistema Google</strong>
+                    <strong>Integración con el Ecosistema</strong>
                     Almacenamiento nativo en Google Drive y vinculación directa con sus repositorios en GitHub.
                 </div>
                 <div class="benefit-item">
                     <strong>Potencia de Cómputo (GPU/TPU)</strong>
-                    Acceso gratuito a hardware de alto rendimiento, esencial para entrenar modelos de Deep Learning de gran escala.
+                    Acceso gratuito a hardware de alto rendimiento, esencial para entrenar modelos de Deep Learning.
                 </div>
             </div>
 
             <div class="cta-container">
                 <h3>Acceda a su Primer Cuaderno de Práctica</h3>
                 <p>He diseñado una libreta específica para que se familiarice con la interfaz antes de iniciar los módulos teóricos.</p>
-                <a href="https://colab.research.google.com/drive/1ljEPC6ak9GhReyQahGxFAZSC0W6_reNX?usp=sharing" target="_blank" class="btn-colab">
+                <a href="https://colab.research.google.com/drive/1b3QueiULtcxwuIugSaXcs8mymCsAhRTr?usp=sharing" target="_blank" class="btn-colab">
                     <i class="fab fa-google-drive"></i> Ejecutar Laboratorio Virtual
                 </a>
             </div>
@@ -107,14 +132,6 @@
                 </div>
                 <p><strong>Nota Crítica:</strong> La primera ejecución puede demorar unos segundos mientras Colab asigna un servidor remoto a su sesión. No interrumpa el proceso.</p>
             </div>
-
-            <h2><i class="fas fa-vial"></i> Herramientas de Vanguardia</h2>
-            <p>A lo largo del curso, utilizaremos funciones de alto nivel:</p>
-            <ul>
-                <li><strong>Tablas Interactivas:</strong> Visualización dinámica de datos epidemiológicos con filtros inteligentes.</li>
-                <li><strong>Asistente Gemini:</strong> Integración de IA Generativa para sugerir arquitecturas de código y gráficas automatizadas.</li>
-                <li><strong>LaTeX en Medicina:</strong> Notación matemática profesional para fórmulas de riesgo y bioestadística.</li>
-            </ul>
 
             <div class="nav-buttons">
                 <a href="index.html" class="btn btn-back">← Volver al Panel</a>
